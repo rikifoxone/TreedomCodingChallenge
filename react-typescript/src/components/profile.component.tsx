@@ -8,7 +8,7 @@ type Props = {};
 type State = {
   redirect: string | null,
   userReady: boolean,
-  currentUser: IUser & { token: string }
+  currentUser: IUser & { _id: string ,token: string }
 }
 export default class Profile extends Component<Props, State> {
   constructor(props: Props) {
@@ -17,7 +17,7 @@ export default class Profile extends Component<Props, State> {
     this.state = {
       redirect: null,
       userReady: false,
-      currentUser: { token: "" }
+      currentUser: { _id: "",token: "" }
     };
   }
 
@@ -34,7 +34,7 @@ export default class Profile extends Component<Props, State> {
     }
 
     const { currentUser } = this.state;
-
+    
     return (
       <div className="container">
         {(this.state.userReady) ?
@@ -44,14 +44,13 @@ export default class Profile extends Component<Props, State> {
                 <strong>{currentUser.email}</strong> Profile
               </h3>
             </header>
-            <p>
-              <strong>Token:</strong>{" "}
+            <p><strong>Token:</strong>{" "}
               {currentUser.token.substring(0, 20)} ...{" "}
               {currentUser.token.substr(currentUser.token.length - 20)}
             </p>
             <p>
               <strong>Id:</strong>{" "}
-              {currentUser.id}
+              {currentUser._id}
             </p>
             <p>
               <strong>Email:</strong>{" "}
