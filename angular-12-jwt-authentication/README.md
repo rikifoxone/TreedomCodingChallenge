@@ -2,8 +2,8 @@
 
 ## Flow for User Registration and User Login
 For JWT – Token based Authentication with Web API, we’re gonna call 2 endpoints:
-- POST `api/auth/signup` for User Registration
-- POST `api/auth/signin` for User Login
+- POST `register` for User Registration
+- POST `login` for User Login
 
 
 Open `app/_helpers/auth.interceptor.js`, modify the code to work with **x-access-token** like this:
